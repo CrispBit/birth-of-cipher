@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="birth-of-cipher"
-run/main_scene="res://main-menu.tscn"
+run/main_scene="res://main_menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
