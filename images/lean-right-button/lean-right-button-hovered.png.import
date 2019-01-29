@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/title.png-50ae1153955eed1e1a910d67a0682202.stex"
+path="res://.import/lean-right-button-hovered.png-b248fc2f24b879c55f1d59aa8884ae87.stex"
 
 [deps]
 
-source_file="res://title.png"
-dest_files=[ "res://.import/title.png-50ae1153955eed1e1a910d67a0682202.stex" ]
+source_file="res://images/lean-right-button/lean-right-button-hovered.png"
+dest_files=[ "res://.import/lean-right-button-hovered.png-b248fc2f24b879c55f1d59aa8884ae87.stex" ]
 
 [params]
 

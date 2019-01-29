@@ -1,6 +1,6 @@
 extends Node
 
-export var file_selection_scene_path = ""
+export var file_selection_scene_path = "";
 
 func _input(event):
     if event.is_pressed():
