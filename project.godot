@@ -16,7 +16,8 @@ config/icon="res://images/icon.png"
 
 [autoload]
 
-global="*res://global.gd"
+global="*res://scripts/global.gd"
+Statics="*res://scripts/Statics.gd"
 
 [display]
 

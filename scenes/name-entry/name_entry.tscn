@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/text-input/text_input.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/chesstype/ChessType.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scripts/name-entry/NameEntry.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+resource_local_to_scene = true
+size = 30
+use_mipmaps = false
+use_filter = false
+extra_spacing_top = 20
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+resource_local_to_scene = true
+size = 30
+use_mipmaps = false
+use_filter = false
+extra_spacing_char = 16
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="Container" type="Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Container" parent="." index="0" instance=ExtResource( 1 )]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="Prompt" parent="Container" index="0"]
+
+custom_fonts/normal_font = SubResource( 1 )
+
+[node name="RichTextLabel" parent="Container" index="1"]
+
+custom_fonts/normal_font = SubResource( 2 )
+
+[node name="Logic" type="Node" parent="." index="1"]
+
+script = ExtResource( 4 )
+emitter_path = NodePath("../Container/Logic")
+
+
+[editable path="Container"]

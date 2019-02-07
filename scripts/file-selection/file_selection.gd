@@ -25,7 +25,7 @@ func _delete_button_pressed():
     _disable_buttons();
 
 func _select_button_pressed():
-    print("ok");
+    get_tree().change_scene(Statics.name_entry_scene_path);
     _disable_buttons();
 
 func _disable_buttons():

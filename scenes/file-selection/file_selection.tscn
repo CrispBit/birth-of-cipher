@@ -1,22 +1,16 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://images/file-selection.png" type="Texture" id=1]
-[ext_resource path="res://fonts/TruenoRg.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://images/file-select-box/file-select-box.png" type="Texture" id=3]
 [ext_resource path="res://images/file-select-box/file-select-box-selected.png" type="Texture" id=4]
 [ext_resource path="res://scripts/file-selection/FileButton.gd" type="Script" id=5]
-[ext_resource path="res://fonts/TruenoBd.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://images/lean-left-button/lean-left-button.png" type="Texture" id=7]
 [ext_resource path="res://images/lean-left-button/lean-left-button-pressed.png" type="Texture" id=8]
 [ext_resource path="res://images/lean-left-button/lean-left-button-hovered.png" type="Texture" id=9]
-[ext_resource path="res://images/lean-right-button/lean-right-button.png" type="Texture" id=10]
-[ext_resource path="res://images/lean-right-button/lean-right-button-pressed.png" type="Texture" id=11]
-[ext_resource path="res://images/lean-right-button/lean-right-button-hovered.png" type="Texture" id=12]
-[ext_resource path="res://scripts/file-selection/file_selection.gd" type="Script" id=13]
-
-
-
-
+[ext_resource path="res://game-objects/buttons/LeanRightButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/file-selection/file_selection.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -29,7 +23,6 @@ _sections_unfolded = [ "Settings" ]
 [sub_resource type="ButtonGroup" id=2]
 
 resource_local_to_scene = true
-resource_name = "FileSelectButton"
 _sections_unfolded = [ "Resource" ]
 
 [sub_resource type="DynamicFont" id=3]
@@ -40,7 +33,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Container" type="Container" index="0"]
+[node name="Container" type="Container"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -99,6 +92,7 @@ _sections_unfolded = [ "Anchor", "BBCode", "Grow Direction", "Margin", "Size Fla
 
 [node name="FileSelectionButtonsContainer" type="HBoxContainer" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -353,6 +347,7 @@ _sections_unfolded = [ "BBCode", "Mouse", "Rect" ]
 
 [node name="DeleteButton" type="TextureButton" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
@@ -406,66 +401,22 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "BBCode", "Mouse", "Rect" ]
 
-[node name="SelectButton" type="TextureButton" parent="." index="4"]
+[node name="SelectButton" parent="." index="4" instance=ExtResource( 10 )]
 
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -400.0
-margin_top = -100.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
-_sections_unfolded = [ "Textures" ]
+editor/display_folded = true
 
-[node name="Label" type="RichTextLabel" parent="SelectButton" index="0"]
+[node name="Label" parent="SelectButton" index="0"]
 
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -280.0
-margin_top = -58.0
-rect_min_size = Vector2( 280, 48 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 3 )
-bbcode_enabled = true
-bbcode_text = "[center]Select[/center]"
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = "Select"
-scroll_active = false
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Mouse", "Rect" ]
+bbcode_text = "[center]Load[/center]"
+text = "Load"
 
 [node name="Logic" type="Node" parent="." index="5"]
 
-script = ExtResource( 13 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Pause" ]
 file_selection_button_group = SubResource( 2 )
 delete_button_path = NodePath("../DeleteButton")
 select_button_path = NodePath("../SelectButton")
 
 
+[editable path="SelectButton"]

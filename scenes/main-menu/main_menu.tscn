@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://images/title.png" type="Texture" id=1]
-[ext_resource path="res://fonts/TruenoBd.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/main-menu/main_menu.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -12,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Container" type="Container" index="0"]
+[node name="Container" type="Container"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -92,6 +92,5 @@ _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 [node name="Logic" type="Node" parent="." index="2"]
 
 script = ExtResource( 3 )
-file_selection_scene_path = "res://scenes/file-selection/file_selection.tscn"
 
 
