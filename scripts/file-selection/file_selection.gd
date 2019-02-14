@@ -23,6 +23,7 @@ func _ready():
     for i in range(3):
         var file_button = ResourceLoader.load(Statics.file_button_path).instance();
         var texture_button = file_button.get_node("TextureButton");
+        texture_button.set_id(i);
         texture_button.connect("pressed", self, "_file_button_pressed", [texture_button]);
         _file_buttons.append(texture_button);
         _center_container.add_child(file_button);
@@ -70,7 +71,7 @@ func _select_button_pressed():
     var name_entry_scene_instance = ResourceLoader.load(Statics.name_entry_scene_path).instance();
     get_node("/root").add_child(name_entry_scene_instance);
     get_tree().current_scene = name_entry_scene_instance;
-    name_entry_scene_instance.set_file_id(_last_pressed_file_button.id);
+    name_entry_scene_instance.set_file_id(_last_pressed_file_button.get_id());
     _disable_buttons();
 
 func _disable_buttons():

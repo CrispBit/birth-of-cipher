@@ -1,6 +1,6 @@
 extends TextureButton
 
-export var id = 0;
+export var _id = 0;
 
 var _name = null;
 var _path = "";
@@ -27,3 +27,9 @@ func set_path(var path):
 
 func get_path():
     return _path;
+
+func set_id(var id):
+    _id = id;
+
+func get_id():
+    return _id;
