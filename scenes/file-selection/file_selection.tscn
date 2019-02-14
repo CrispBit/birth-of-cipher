@@ -1,0 +1,175 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/file-selection/file_selection_root.gd" type="Script" id=1]
+[ext_resource path="res://images/file-selection.png" type="Texture" id=2]
+[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://images/lean-left-button/lean-left-button.png" type="Texture" id=4]
+[ext_resource path="res://images/lean-left-button/lean-left-button-pressed.png" type="Texture" id=5]
+[ext_resource path="res://images/lean-left-button/lean-left-button-hovered.png" type="Texture" id=6]
+[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://game-objects/buttons/LeanRightButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/file-selection/file_selection.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 44
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 7 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Container" type="Container"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Background" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Title" type="RichTextLabel" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.15
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]File Selection[/center]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = false
+tab_size = 4
+text = "File Selection"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "Grow Direction", "Margin", "Size Flags", "custom_fonts" ]
+
+[node name="FileSelectionButtonsContainer" type="HBoxContainer" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+
+[node name="DeleteButton" type="TextureButton" parent="." index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 400.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="RichTextLabel" parent="DeleteButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -10.0
+margin_right = -120.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 280, 48 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Delete[/center]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Delete"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Mouse", "Rect" ]
+
+[node name="SelectButton" parent="." index="4" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+
+[node name="Label" parent="SelectButton" index="0"]
+
+bbcode_text = "[center]Load[/center]"
+text = "Load"
+
+[node name="Node" type="Node" parent="." index="5"]
+
+script = ExtResource( 9 )
+file_id = 0
+delete_button_path = NodePath("../DeleteButton")
+select_button_path = NodePath("../SelectButton")
+center_container_path = NodePath("../FileSelectionButtonsContainer")
+
+
+[editable path="SelectButton"]

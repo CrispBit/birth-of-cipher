@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/File Select Box.png-7dcd3229c35b3c817bb688dfb1177ba6.stex"
+path="res://.import/title.png-5fed1d34c042d533601bd35ed11a0a68.stex"
 
 [deps]
 
-source_file="res://File Select Box.png"
-dest_files=[ "res://.import/File Select Box.png-7dcd3229c35b3c817bb688dfb1177ba6.stex" ]
+source_file="res://images/title.png"
+dest_files=[ "res://.import/title.png-5fed1d34c042d533601bd35ed11a0a68.stex" ]
 
 [params]
 

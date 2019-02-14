@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/chesstype/ChessType.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://game-objects/buttons/LeanLeftButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game-objects/buttons/LeanRightButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/text-input/TextInput.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+resource_local_to_scene = true
+size = 30
+use_mipmaps = false
+use_filter = false
+extra_spacing_top = 20
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+resource_local_to_scene = true
+size = 30
+use_mipmaps = false
+use_filter = false
+extra_spacing_char = 16
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="Container" type="Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Prompt" type="RichTextLabel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_bottom = 222.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Prompt[/center]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Prompt"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_fonts" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 221.0
+margin_bottom = -134.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]inputA____[/center]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "inputA____"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_fonts" ]
+
+[node name="CancelButton" parent="." index="2" instance=ExtResource( 3 )]
+
+disabled = false
+
+[node name="Label" parent="CancelButton" index="0"]
+
+bbcode_text = "[center]Cancel[/center]"
+text = "Cancel"
+
+[node name="SubmitButton" parent="." index="3" instance=ExtResource( 4 )]
+
+disabled = false
+
+[node name="Label" parent="SubmitButton" index="0"]
+
+bbcode_text = "[center]Okay[/center]"
+text = "Okay"
+
+[node name="Logic" type="Node" parent="." index="4"]
+
+script = ExtResource( 5 )
+prompt = "Prompt"
+default_input = "input"
+max_length = 10
+cancel_button_path = NodePath("../CancelButton")
+submit_button_path = NodePath("../SubmitButton")
+input_text_path = NodePath("../RichTextLabel")
+
+
+[editable path="CancelButton"]
+[editable path="SubmitButton"]

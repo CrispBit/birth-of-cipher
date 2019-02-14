@@ -11,12 +11,13 @@ config_version=3
 [application]
 
 config/name="birth-of-cipher"
-run/main_scene="res://main_menu.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/main-menu/main_menu.tscn"
+config/icon="res://images/icon.png"
 
 [autoload]
 
-global="*res://global.gd"
+global="*res://scripts/global.gd"
+Statics="*res://scripts/Statics.gd"
 
 [display]
 
