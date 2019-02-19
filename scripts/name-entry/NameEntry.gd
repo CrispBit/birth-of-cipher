@@ -14,6 +14,8 @@ func _submit(name):
         dir.make_dir_recursive("user://save");
     var new_file = File.new();
     new_file.open("user://save/file" + str(file_id + 1) + ".sav", File.WRITE);
+    new_file.store_16(0); # region number
+    new_file.store_16(0); # area number
     new_file.store_8(file_id);
     new_file.store_pascal_string(name);
     new_file.close();
