@@ -46,12 +46,16 @@ func _reload_files():
             continue;
         var file = File.new();
         file.open("user://save/" + file_name, file.READ);
+        file.get_16();
+        file.get_16();
         var data = {
             "file_id": file.get_8(),
             "file_name": file.get_pascal_string(),
         };
+        file.close();
+        print(data.file_id);
         _file_buttons[data.file_id].set_name(data.file_name);
-        _file_buttons[data.file_id].set_path("user://save/" + file_name);
+        _file_buttons[data.file_id].set_path("user://save/" + data.file_name);
     
     dir.list_dir_end();
 
@@ -67,12 +71,18 @@ func _delete_button_pressed():
     _disable_buttons();
 
 func _select_button_pressed():
-    get_parent().queue_free();
-    var name_entry_scene_instance = ResourceLoader.load(Statics.name_entry_scene_path).instance();
-    get_node("/root").add_child(name_entry_scene_instance);
-    get_tree().current_scene = name_entry_scene_instance;
-    name_entry_scene_instance.set_file_id(_last_pressed_file_button.get_id());
     _disable_buttons();
+    get_parent().queue_free();
+    if _last_pressed_file_button.has_data():
+        var level_controller_scene_instance = ResourceLoader.load(Statics.level_controller_path).instance();
+        get_node("/root").add_child(level_controller_scene_instance);
+        get_tree().current_scene = level_controller_scene_instance;
+        level_controller_scene_instance.set_data(_last_pressed_file_button.get_data());
+    else:
+        var name_entry_scene_instance = ResourceLoader.load(Statics.name_entry_scene_path).instance();
+        get_node("/root").add_child(name_entry_scene_instance);
+        get_tree().current_scene = name_entry_scene_instance;
+        name_entry_scene_instance.set_file_id(_last_pressed_file_button.get_id());
 
 func _disable_buttons():
     _delete_button.disabled = true;

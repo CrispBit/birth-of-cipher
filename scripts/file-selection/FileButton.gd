@@ -33,3 +33,11 @@ func set_id(var id):
 
 func get_id():
     return _id;
+
+func has_data():
+    return _name != null;
+
+func get_data():
+    return {
+        name: get_name(),
+    };
