@@ -2,6 +2,7 @@ extends TextureButton
 
 export var _id = 0;
 
+var _data = null;
 var _name = null;
 var _path = "";
 
@@ -37,7 +38,10 @@ func get_id():
 func has_data():
     return _name != null;
 
+func set_data(data):
+    _data = data;
+    set_name(data.file_name);
+    set_path("user://save/" + data.file_name);
+
 func get_data():
-    return {
-        name: get_name(),
-    };
+    return _data;

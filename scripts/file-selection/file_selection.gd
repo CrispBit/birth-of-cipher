@@ -46,16 +46,14 @@ func _reload_files():
             continue;
         var file = File.new();
         file.open("user://save/" + file_name, file.READ);
-        file.get_16();
-        file.get_16();
         var data = {
+            "region_id": file.get_16(),
+            "area_id": file.get_16(),
             "file_id": file.get_8(),
             "file_name": file.get_pascal_string(),
         };
         file.close();
-        print(data.file_id);
-        _file_buttons[data.file_id].set_name(data.file_name);
-        _file_buttons[data.file_id].set_path("user://save/" + data.file_name);
+        _file_buttons[data.file_id].set_data(data);
     
     dir.list_dir_end();
 
