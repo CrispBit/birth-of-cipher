@@ -3,7 +3,7 @@ extends Panel
 var _data;
 
 func _ready():
-    $TabContainer/Basic/Unpause.connect("pressed", self, "_close_popup_menu");
+    $TabContainer/Status/Unpause.connect("pressed", self, "_close_popup_menu");
 
 func _process(delta):
     if Input.is_action_just_pressed("toggle_pause"):
