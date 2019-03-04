@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliffBrown_blockHalf.obj-63e9362570f60a1246c6263b2c553421.mesh"
+
+[deps]
+
+files=[ "res://.import/cliffBrown_blockHalf.obj-63e9362570f60a1246c6263b2c553421.mesh" ]
+
+source_file="res://extern/Kenny Nature/Models/OBJ format/cliffBrown_blockHalf.obj"
+dest_files=[ "res://.import/cliffBrown_blockHalf.obj-63e9362570f60a1246c6263b2c553421.mesh", "res://.import/cliffBrown_blockHalf.obj-63e9362570f60a1246c6263b2c553421.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/caveInside.obj-5a78c3723a129c7607d7427f8eda55c3.mesh"
+
+[deps]
+
+files=[ "res://.import/caveInside.obj-5a78c3723a129c7607d7427f8eda55c3.mesh" ]
+
+source_file="res://extern/Voxel Objects/caveInside.obj"
+dest_files=[ "res://.import/caveInside.obj-5a78c3723a129c7607d7427f8eda55c3.mesh", "res://.import/caveInside.obj-5a78c3723a129c7607d7427f8eda55c3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

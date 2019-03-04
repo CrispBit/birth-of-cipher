@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree_blocks_fall.obj-8b2beabe29f53301b48d3e14cbd40c12.mesh"
+
+[deps]
+
+files=[ "res://.import/tree_blocks_fall.obj-8b2beabe29f53301b48d3e14cbd40c12.mesh" ]
+
+source_file="res://extern/Kenny Nature/Models/OBJ format/tree_blocks_fall.obj"
+dest_files=[ "res://.import/tree_blocks_fall.obj-8b2beabe29f53301b48d3e14cbd40c12.mesh", "res://.import/tree_blocks_fall.obj-8b2beabe29f53301b48d3e14cbd40c12.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

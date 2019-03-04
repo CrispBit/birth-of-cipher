@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/palm_large.obj-2fb491aeb7df4748d6b040b75925a958.mesh"
+
+[deps]
+
+files=[ "res://.import/palm_large.obj-2fb491aeb7df4748d6b040b75925a958.mesh" ]
+
+source_file="res://extern/Kenny Nature/Models/OBJ format/palm_large.obj"
+dest_files=[ "res://.import/palm_large.obj-2fb491aeb7df4748d6b040b75925a958.mesh", "res://.import/palm_large.obj-2fb491aeb7df4748d6b040b75925a958.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

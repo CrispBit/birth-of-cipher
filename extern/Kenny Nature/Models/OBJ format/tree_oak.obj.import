@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree_oak.obj-70161d795e141ba9d04ee7d4da23b7d6.mesh"
+
+[deps]
+
+files=[ "res://.import/tree_oak.obj-70161d795e141ba9d04ee7d4da23b7d6.mesh" ]
+
+source_file="res://extern/Kenny Nature/Models/OBJ format/tree_oak.obj"
+dest_files=[ "res://.import/tree_oak.obj-70161d795e141ba9d04ee7d4da23b7d6.mesh", "res://.import/tree_oak.obj-70161d795e141ba9d04ee7d4da23b7d6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
