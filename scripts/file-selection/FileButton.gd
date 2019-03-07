@@ -41,7 +41,7 @@ func has_data():
 func set_data(data):
     _data = data;
     set_name(data.file_name);
-    set_path("user://save/" + data.file_name);
+    set_path("user://save/file" + str(get_id()+1) + ".sav");
 
 func get_data():
     return _data;
