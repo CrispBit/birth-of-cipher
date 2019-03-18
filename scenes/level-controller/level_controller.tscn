@@ -1,21 +1,23 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/level-controller/level_controller.gd" type="Script" id=1]
-[ext_resource path="res://scripts/level-controller/pause_popup.gd" type="Script" id=2]
-[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://images/MenuInvRight.png" type="Texture" id=5]
-[ext_resource path="res://images/MenuInvLeft.png" type="Texture" id=6]
-[ext_resource path="res://images/MenuInvButton.png" type="Texture" id=7]
-[ext_resource path="res://images/Charger2.png" type="Texture" id=8]
-[ext_resource path="res://images/Charger1.png" type="Texture" id=9]
+[ext_resource path="res://images/controller-icons/keyboard-mouse.png" type="Texture" id=2]
+[ext_resource path="res://images/controller-icons/joypad.png" type="Texture" id=3]
+[ext_resource path="res://scripts/level-controller/pause_popup.gd" type="Script" id=4]
+[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://images/MenuInvRight.png" type="Texture" id=7]
+[ext_resource path="res://images/MenuInvLeft.png" type="Texture" id=8]
+[ext_resource path="res://images/MenuInvButton.png" type="Texture" id=9]
+[ext_resource path="res://images/Charger2.png" type="Texture" id=10]
+[ext_resource path="res://images/Charger1.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Settings" ]
 
 [sub_resource type="StreamTexture" id=2]
@@ -28,7 +30,7 @@ load_path = "res://.import/menu-3.png-0bce78bad5ca48e641b079929803ac0c.stex"
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -36,7 +38,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 60
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Container" type="Container" index="0"]
@@ -53,24 +55,96 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="pause_popup" type="Panel" parent="." index="0"]
+[node name="level_container" type="Container" parent="." index="0"]
 
-pause_mode = 2
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -479.5
-margin_top = -276.5
-margin_right = 479.5
-margin_bottom = 276.5
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 2 )
+
+[node name="controller_icons" type="Control" parent="level_container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 896.0
+margin_top = 472.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="keyboard_mouse" type="TextureRect" parent="level_container/controller_icons" index="0"]
+
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -118.0
+margin_top = -70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+_sections_unfolded = [ "Anchor", "Rect" ]
+
+[node name="joypad" type="TextureRect" parent="level_container/controller_icons" index="1"]
+
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -116.0
+margin_top = -70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="pause_popup" type="Panel" parent="." index="1"]
+
+pause_mode = 2
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -480.0
+margin_top = -277.0
+margin_right = 479.0
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="TabContainer" type="TabContainer" parent="pause_popup" index="0"]
@@ -90,7 +164,7 @@ tabs_visible = true
 
 [node name="Status" type="Control" parent="pause_popup/TabContainer" index="0"]
 
-visible = false
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -245,6 +319,7 @@ _sections_unfolded = [ "Border", "Capping" ]
 
 [node name="Map" type="Control" parent="pause_popup/TabContainer" index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -284,6 +359,7 @@ _sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="Inventory" type="Control" parent="pause_popup/TabContainer" index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -301,7 +377,6 @@ size_flags_vertical = 1
 
 [node name="TextureButton3" type="TextureButton" parent="pause_popup/TabContainer/Inventory" index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -322,13 +397,12 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 7 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton2" type="TextureButton" parent="pause_popup/TabContainer/Inventory" index="1"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -349,12 +423,13 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 8 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="pause_popup/TabContainer/Inventory" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -378,11 +453,12 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="pause_popup/TabContainer/Inventory/ScrollContainer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 676.0
+margin_right = 544.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -393,7 +469,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="TextureRect11" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="0"]
+[node name="TextureRect12" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -407,10 +483,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect12" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="1"]
+[node name="TextureRect13" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -425,10 +501,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect13" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="2"]
+[node name="TextureRect14" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -443,10 +519,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect14" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="3"]
+[node name="TextureRect15" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -461,10 +537,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect15" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="4"]
+[node name="TextureRect16" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -479,10 +555,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect16" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="5"]
+[node name="TextureRect17" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -497,10 +573,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect17" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="6"]
+[node name="TextureRect18" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -515,10 +591,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect18" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="7"]
+[node name="TextureRect19" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -533,17 +609,17 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 
-[node name="TextureRect19" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="8"]
+[node name="TextureRect20" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 544.0
-margin_right = 608.0
+margin_right = 544.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -551,29 +627,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
-stretch_mode = 0
-
-[node name="TextureRect20" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 612.0
-margin_right = 676.0
-margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 7 )
 stretch_mode = 0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="pause_popup/TabContainer/Inventory/ScrollContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -607,8 +665,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton4" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="1"]
@@ -631,8 +689,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton5" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="2"]
@@ -655,8 +713,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton6" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="3"]
@@ -679,8 +737,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
 
