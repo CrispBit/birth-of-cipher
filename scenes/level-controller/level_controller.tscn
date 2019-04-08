@@ -1,23 +1,24 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/level-controller/level_controller.gd" type="Script" id=1]
-[ext_resource path="res://images/controller-icons/keyboard-mouse.png" type="Texture" id=2]
-[ext_resource path="res://images/controller-icons/joypad.png" type="Texture" id=3]
-[ext_resource path="res://scripts/level-controller/pause_popup.gd" type="Script" id=4]
-[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=6]
-[ext_resource path="res://images/MenuInvRight.png" type="Texture" id=7]
-[ext_resource path="res://images/MenuInvLeft.png" type="Texture" id=8]
-[ext_resource path="res://images/MenuInvButton.png" type="Texture" id=9]
-[ext_resource path="res://images/Charger2.png" type="Texture" id=10]
-[ext_resource path="res://images/Charger1.png" type="Texture" id=11]
+[ext_resource path="res://images/button-icons/keys/E-Key.png" type="Texture" id=2]
+[ext_resource path="res://images/controller-icons/keyboard-mouse.png" type="Texture" id=3]
+[ext_resource path="res://images/controller-icons/joypad.png" type="Texture" id=4]
+[ext_resource path="res://scripts/level-controller/pause_popup.gd" type="Script" id=5]
+[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://images/MenuInvRight.png" type="Texture" id=8]
+[ext_resource path="res://images/MenuInvLeft.png" type="Texture" id=9]
+[ext_resource path="res://images/MenuInvButton.png" type="Texture" id=10]
+[ext_resource path="res://images/Charger2.png" type="Texture" id=11]
+[ext_resource path="res://images/Charger1.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Settings" ]
 
 [sub_resource type="StreamTexture" id=2]
@@ -30,7 +31,7 @@ load_path = "res://.import/menu-3.png-0bce78bad5ca48e641b079929803ac0c.stex"
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -38,7 +39,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 60
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Container" type="Container" index="0"]
@@ -68,8 +69,51 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="controller_icons" type="Control" parent="level_container" index="0"]
+[node name="controller_hint_icons" type="Control" parent="level_container" index="0"]
 
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -43.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 33, 33 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="keyboard" type="Node" parent="level_container/controller_hint_icons" index="0"]
+
+[node name="E" type="TextureRect" parent="level_container/controller_hint_icons/keyboard" index="0"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 469.0
+margin_top = -290.0
+margin_right = 502.0
+margin_bottom = -257.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+
+[node name="controller_icons" type="Control" parent="level_container" index="1"]
+
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -101,7 +145,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 _sections_unfolded = [ "Anchor", "Rect" ]
@@ -121,7 +165,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 
@@ -144,7 +188,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="TabContainer" type="TabContainer" parent="pause_popup" index="0"]
@@ -397,7 +441,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 8 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
@@ -423,7 +467,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
@@ -483,7 +527,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect13" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="1"]
@@ -501,7 +545,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect14" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="2"]
@@ -519,7 +563,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect15" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="3"]
@@ -537,7 +581,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect16" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="4"]
@@ -555,7 +599,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect17" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="5"]
@@ -573,7 +617,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect18" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="6"]
@@ -591,7 +635,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect19" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="7"]
@@ -609,7 +653,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 
 [node name="TextureRect20" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="8"]
@@ -665,8 +709,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton4" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="1"]
@@ -689,8 +733,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton5" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="2"]
@@ -713,8 +757,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton6" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="3"]
@@ -737,8 +781,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
 _sections_unfolded = [ "Textures" ]
 
 
