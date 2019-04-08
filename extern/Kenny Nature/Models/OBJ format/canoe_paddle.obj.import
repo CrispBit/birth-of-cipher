@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/canoe_paddle.obj-4eb258d1619278f86f1d6123d98adde4.mesh"
+
+[deps]
+
+files=[ "res://.import/canoe_paddle.obj-4eb258d1619278f86f1d6123d98adde4.mesh" ]
+
+source_file="res://extern/Kenny Nature/Models/OBJ format/canoe_paddle.obj"
+dest_files=[ "res://.import/canoe_paddle.obj-4eb258d1619278f86f1d6123d98adde4.mesh", "res://.import/canoe_paddle.obj-4eb258d1619278f86f1d6123d98adde4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

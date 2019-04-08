@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/log_large.obj-53f3903e374a5e3e322a408b14ef741a.mesh"
+
+[deps]
+
+files=[ "res://.import/log_large.obj-53f3903e374a5e3e322a408b14ef741a.mesh" ]
+
+source_file="res://extern/Kenny Nature/Models/OBJ format/log_large.obj"
+dest_files=[ "res://.import/log_large.obj-53f3903e374a5e3e322a408b14ef741a.mesh", "res://.import/log_large.obj-53f3903e374a5e3e322a408b14ef741a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

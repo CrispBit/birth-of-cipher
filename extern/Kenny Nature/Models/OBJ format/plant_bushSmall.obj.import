@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plant_bushSmall.obj-539bb15e3842162c1da7cf6cbc011b0c.mesh"
+
+[deps]
+
+files=[ "res://.import/plant_bushSmall.obj-539bb15e3842162c1da7cf6cbc011b0c.mesh" ]
+
+source_file="res://extern/Kenny Nature/Models/OBJ format/plant_bushSmall.obj"
+dest_files=[ "res://.import/plant_bushSmall.obj-539bb15e3842162c1da7cf6cbc011b0c.mesh", "res://.import/plant_bushSmall.obj-539bb15e3842162c1da7cf6cbc011b0c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
