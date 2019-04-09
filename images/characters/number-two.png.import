@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dialog2.png-a21e3be38443f0b760ef1211f6520b25.stex"
+path="res://.import/number-two.png-cfd34da703f9d1e69d4c280392d13622.stex"
 
 [deps]
 
-source_file="res://images/Dialog2.png"
-dest_files=[ "res://.import/Dialog2.png-a21e3be38443f0b760ef1211f6520b25.stex" ]
+source_file="res://images/characters/number-two.png"
+dest_files=[ "res://.import/number-two.png-cfd34da703f9d1e69d4c280392d13622.stex" ]
 
 [params]
 

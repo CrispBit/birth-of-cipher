@@ -8,6 +8,9 @@ func itemMenuToggle():
         self.hide()
     else:
         self.show()
+        
+func cast():
+    self.hide()
 
 func _ready():
     $ItemList.add_item("Charger", null, true)

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dialog3.png-15319b8f2c6488f8637a6900f8669987.stex"
+path="res://.import/number-three.png-e1618e8f5ec301ea7474663bd6c881db.stex"
 
 [deps]
 
-source_file="res://images/Dialog3.png"
-dest_files=[ "res://.import/Dialog3.png-15319b8f2c6488f8637a6900f8669987.stex" ]
+source_file="res://images/characters/number-three.png"
+dest_files=[ "res://.import/number-three.png-e1618e8f5ec301ea7474663bd6c881db.stex" ]
 
 [params]
 

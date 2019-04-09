@@ -4,6 +4,9 @@ export(Texture) var EntityImage
 
 var _Health
 
+func get_HP():
+    return _Health
+    
 func bash():
     _Health -= 2
     get_node("HP").set_text(str(_Health))
@@ -11,6 +14,7 @@ func bash():
         get_node("HP").set_text(str(""))
         get_node("HP Label").set_text("Enemy Defeated!")
         $Sprite.hide()
+    
 
 func _ready():
     _Health = Health
