@@ -7,6 +7,7 @@ enum CONTROLLER {
 }
 var controller = CONTROLLER.mouse_keyboard;
 var _player_entity;
+var _last_interactable_entity;
 var _interactables;
 
 func set_data(data):
@@ -39,12 +40,15 @@ func _input(event):
             $level_container/controller_icons/keyboard_mouse.visible = true;
         CONTROLLER.joypad:
             $level_container/controller_icons/joypad.visible = true;
+    if Input.is_action_just_pressed("game_interact"):
+        _last_interactable_entity.interact();
 
 func _process(delta):
     for item in $level_container/controller_hint_icons/keyboard.get_children():
         item.visible = false;
     for interactable in _interactables:
-        if _player_entity.global_transform.origin.distance_to(interactable.global_transform.origin) <= 4:
+        if interactable.can_interact_with(_player_entity):
+            _last_interactable_entity = interactable;
             for action in InputMap.get_action_list("game_interact"):
                 if controller == CONTROLLER.mouse_keyboard && action is InputEventKey:
                     get_node("level_container/controller_hint_icons/keyboard/" + OS.get_scancode_string(action.scancode)).visible = true;
