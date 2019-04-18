@@ -1,45 +1,64 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/level-controller/level_controller.gd" type="Script" id=1]
-[ext_resource path="res://images/button-icons/keys/E-Key.png" type="Texture" id=2]
-[ext_resource path="res://images/controller-icons/keyboard-mouse.png" type="Texture" id=3]
-[ext_resource path="res://images/controller-icons/joypad.png" type="Texture" id=4]
-[ext_resource path="res://scripts/level-controller/pause_popup.gd" type="Script" id=5]
-[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=6]
-[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://images/MenuInvRight.png" type="Texture" id=8]
-[ext_resource path="res://images/MenuInvLeft.png" type="Texture" id=9]
-[ext_resource path="res://images/MenuInvButton.png" type="Texture" id=10]
-[ext_resource path="res://images/Charger2.png" type="Texture" id=11]
-[ext_resource path="res://images/Charger1.png" type="Texture" id=12]
+[ext_resource path="res://fonts/trueno/TruenoLt.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://images/button-icons/keys/E-Key.png" type="Texture" id=3]
+[ext_resource path="res://images/controller-icons/keyboard-mouse.png" type="Texture" id=4]
+[ext_resource path="res://images/controller-icons/joypad.png" type="Texture" id=5]
+[ext_resource path="res://scripts/level-controller/pause_popup.gd" type="Script" id=6]
+[ext_resource path="res://fonts/trueno/TruenoRg.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://fonts/trueno/TruenoBd.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://images/MenuInvRight.png" type="Texture" id=9]
+[ext_resource path="res://images/MenuInvLeft.png" type="Texture" id=10]
+[ext_resource path="res://images/MenuInvButton.png" type="Texture" id=11]
+[ext_resource path="res://images/Charger2.png" type="Texture" id=12]
+[ext_resource path="res://images/Charger1.png" type="Texture" id=13]
+[ext_resource path="res://scripts/dialogue-controller/DialogueController.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 30
+resource_local_to_scene = true
+size = 33
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Settings" ]
-
-[sub_resource type="StreamTexture" id=2]
-
-flags = 4
-load_path = "res://.import/menu-3.png-0bce78bad5ca48e641b079929803ac0c.stex"
 
 [sub_resource type="DynamicFont" id=3]
 
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="StreamTexture" id=4]
+
+flags = 4
+load_path = "res://.import/menu-3.png-0bce78bad5ca48e641b079929803ac0c.stex"
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 
 size = 60
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Container" type="Container" index="0"]
@@ -69,8 +88,95 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="controller_hint_icons" type="Control" parent="level_container" index="0"]
+[node name="dialogue_container" type="Container" parent="." index="1"]
 
+visible = false
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -159.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="dialogue_container" index="0"]
+
+polygon = PoolVector2Array( 1024, 0, 1024, 165, 0, 165, 0, 0 )
+uv = PoolVector2Array(  )
+color = Color( 0.628052, 0.640903, 0.957031, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="SpeakerText" type="RichTextLabel" parent="dialogue_container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Name"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="DialogueText" type="RichTextLabel" parent="dialogue_container" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "content"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="controller_hint_icons" type="Control" parent="." index="2"]
+
+editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -88,9 +194,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="keyboard" type="Node" parent="level_container/controller_hint_icons" index="0"]
+[node name="keyboard" type="Node" parent="controller_hint_icons" index="0"]
 
-[node name="E" type="TextureRect" parent="level_container/controller_hint_icons/keyboard" index="0"]
+[node name="E" type="TextureRect" parent="controller_hint_icons/keyboard" index="0"]
 
 visible = false
 anchor_left = 0.5
@@ -107,11 +213,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 3
 
-[node name="controller_icons" type="Control" parent="level_container" index="1"]
+[node name="controller_icons" type="Control" parent="." index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -130,7 +236,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="keyboard_mouse" type="TextureRect" parent="level_container/controller_icons" index="0"]
+[node name="keyboard_mouse" type="TextureRect" parent="controller_icons" index="0"]
 
 visible = false
 anchor_left = 1.0
@@ -145,12 +251,12 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 _sections_unfolded = [ "Anchor", "Rect" ]
 
-[node name="joypad" type="TextureRect" parent="level_container/controller_icons" index="1"]
+[node name="joypad" type="TextureRect" parent="controller_icons" index="1"]
 
 visible = false
 anchor_left = 1.0
@@ -165,11 +271,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
-[node name="pause_popup" type="Panel" parent="." index="1"]
+[node name="pause_popup" type="Panel" parent="." index="4"]
 
 pause_mode = 2
 editor/display_folded = true
@@ -188,7 +294,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="TabContainer" type="TabContainer" parent="pause_popup" index="0"]
@@ -241,7 +347,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -267,7 +373,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = SubResource( 2 )
+texture = SubResource( 4 )
 expand = true
 stretch_mode = 6
 
@@ -304,7 +410,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = false
 bbcode_text = ""
@@ -335,7 +441,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = false
 bbcode_text = ""
@@ -441,7 +547,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
@@ -467,7 +573,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
@@ -527,7 +633,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect13" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="1"]
@@ -545,7 +651,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect14" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="2"]
@@ -563,7 +669,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect15" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="3"]
@@ -581,7 +687,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect16" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="4"]
@@ -599,7 +705,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect17" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="5"]
@@ -617,7 +723,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect18" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="6"]
@@ -635,7 +741,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect19" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="7"]
@@ -653,7 +759,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 
 [node name="TextureRect20" type="TextureRect" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer" index="8"]
@@ -709,8 +815,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton4" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="1"]
@@ -733,8 +839,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton5" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="2"]
@@ -757,8 +863,8 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="TextureButton6" type="TextureButton" parent="pause_popup/TabContainer/Inventory/ScrollContainer/HBoxContainer2" index="3"]
@@ -781,8 +887,12 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
 _sections_unfolded = [ "Textures" ]
+
+[node name="DialogueController" type="Node" parent="." index="5"]
+
+script = ExtResource( 14 )
 
 

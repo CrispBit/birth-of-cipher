@@ -1,0 +1,13 @@
+{
+    "0": {
+        "condition": "NOT_READ_IN_DIALOGUE_SESSION",
+        "content": "Hey, punk! This message will not show again, punk! It's a one-time thing, punk!",
+        "pass_divert": "1",
+        "fail_divert": "1"
+    },
+    "1": {
+        "condition": "NONE",
+        "content": "How bout that, punk?! This message *will* show again, punk! It's a sure deal, punk!",
+        "pass_divert": "-1"
+    }
+}
