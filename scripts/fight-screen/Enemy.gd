@@ -1,22 +1,23 @@
 extends Control
-export(int) var Health
-export(Texture) var EntityImage
+export(int) var health;
+export(Texture) var EntityImage;
 
-var _Health
+var _health;
+signal after_attacked;
 
 func get_HP():
-    return _Health
+    return _health;
     
-func bash():
-    _Health -= 2
-    get_node("HP").set_text(str(_Health))
-    if(_Health < 1):
-        get_node("HP").set_text(str(""))
-        get_node("HP Label").set_text("Enemy Defeated!")
-        $Sprite.hide()
-    
+func receive_bash():
+    _health -= 2;
+    $HP.set_text(str(_health));
+    if(_health < 1):
+        $HP.set_text(str(""));
+        get_node("HP Label").set_text("Enemy Defeated!");
+        $Sprite.hide();
+    emit_signal("after_attacked");
 
 func _ready():
-    _Health = Health
-    get_node("HP").set_text(str(_Health))
-    get_node("Sprite").set_texture(EntityImage)
+    _health = health;
+    $HP.set_text(str(_health));
+    $Sprite.set_texture(EntityImage);

@@ -61,7 +61,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Container" type="Container"]
+[node name="Container" type="Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -894,9 +894,6 @@ texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 13 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="DialogueController" type="Node" parent="." index="5"]
-
-script = ExtResource( 14 )
 [node name="Panel" type="Panel" parent="pause_popup/TabContainer/Inventory" index="3"]
 
 anchor_left = 0.0
@@ -929,3 +926,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 8
+
+[node name="DialogueController" type="Node" parent="." index="5"]
+
+script = ExtResource( 14 )
+
+

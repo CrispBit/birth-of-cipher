@@ -2,9 +2,9 @@
 
 [ext_resource path="res://scripts/fight-screen/fight-screen.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fight-screen/Entity.tscn" type="PackedScene" id=2]
-[ext_resource path="res://images/characters/number-three.png" type="Texture" id=3]
+[ext_resource path="res://images/characters/number-three/number-three.png" type="Texture" id=3]
 [ext_resource path="res://scenes/fight-screen/Enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://images/characters/number-two.png" type="Texture" id=5]
+[ext_resource path="res://images/characters/number-two/number-two.png" type="Texture" id=5]
 [ext_resource path="res://images/ScreenHud.png" type="Texture" id=6]
 [ext_resource path="res://images/BashButton.png" type="Texture" id=7]
 [ext_resource path="res://images/ChargeButton.png" type="Texture" id=8]
@@ -12,10 +12,6 @@
 [ext_resource path="res://images/RunButton.png" type="Texture" id=10]
 [ext_resource path="res://scenes/fight-screen/Item Table.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/fight-screen/Charge Table.tscn" type="PackedScene" id=12]
-
-
-
-
 
 
 
@@ -43,7 +39,7 @@ margin_top = 64.0
 margin_right = 222.0
 margin_bottom = 195.0
 _sections_unfolded = [ "Rect" ]
-Charge = 20
+charge = 20
 EntityImage = ExtResource( 3 )
 
 [node name="Enemy" parent="." index="1" instance=ExtResource( 4 )]
@@ -53,7 +49,7 @@ margin_top = 64.0
 margin_right = 809.0
 margin_bottom = 235.0
 _sections_unfolded = [ "Rect" ]
-Health = 20
+health = 20
 EntityImage = ExtResource( 5 )
 
 [node name="ScreenHud" type="Sprite" parent="." index="2"]
@@ -162,14 +158,14 @@ texture_normal = ExtResource( 10 )
 expand = true
 _sections_unfolded = [ "Mouse", "Rect", "Textures" ]
 
-[node name="Item Table" parent="." index="7" instance=ExtResource( 11 )]
+[node name="ItemTable" parent="." index="7" instance=ExtResource( 11 )]
 
 margin_left = 7.0
 margin_top = 347.0
 margin_right = 47.0
 margin_bottom = 387.0
 
-[node name="Charge Table" parent="." index="8" instance=ExtResource( 12 )]
+[node name="ChargeTable" parent="." index="8" instance=ExtResource( 12 )]
 
 margin_left = 6.0
 margin_top = 347.0

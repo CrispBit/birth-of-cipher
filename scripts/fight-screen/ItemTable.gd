@@ -3,7 +3,7 @@ extends Control
 func disp():
     self.hide()
     
-func itemMenuToggle():
+func item_menu_toggle():
     if self.visible:
         self.hide()
     else:

@@ -7,7 +7,7 @@ func cast(targ, ind):
     targ.bash()
     $ItemList.remove_item(0)
     
-func chargeMenuToggle():
+func charge_menu_toggle():
     if self.visible:
         self.hide()
     else:

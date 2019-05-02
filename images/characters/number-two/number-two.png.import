@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/number-two.png-cfd34da703f9d1e69d4c280392d13622.stex"
+path="res://.import/number-two.png-992174e97ef10c2534bdaba68a44754d.stex"
 
 [deps]
 
-source_file="res://images/characters/number-two.png"
-dest_files=[ "res://.import/number-two.png-cfd34da703f9d1e69d4c280392d13622.stex" ]
+source_file="res://images/characters/number-two/number-two.png"
+dest_files=[ "res://.import/number-two.png-992174e97ef10c2534bdaba68a44754d.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/number-three.png-e1618e8f5ec301ea7474663bd6c881db.stex"
+path="res://.import/number-three.png-3ae1a89cee613582f526c632c4d960db.stex"
 
 [deps]
 
-source_file="res://images/characters/number-three.png"
-dest_files=[ "res://.import/number-three.png-e1618e8f5ec301ea7474663bd6c881db.stex" ]
+source_file="res://images/characters/number-three/number-three.png"
+dest_files=[ "res://.import/number-three.png-3ae1a89cee613582f526c632c4d960db.stex" ]
 
 [params]
 
