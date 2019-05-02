@@ -3,6 +3,7 @@ extends Node
 var _pos;
 var _dict;
 var _session_set;
+var _finish_action;
 
 func init_dialogue(dialogue_component):
     var file = File.new();
@@ -13,6 +14,7 @@ func init_dialogue(dialogue_component):
     _pos = 0;
     $"../dialogue_container/SpeakerText".set_text(dialogue_component.speaker_name);
     _session_set = [];
+    _finish_action = "NONE";
 
 func _present_line(content, divert):
     _pos = int(divert);
@@ -23,9 +25,22 @@ func step_dialogue():
     if _pos == -1:
         $"../dialogue_container".set_visible(false);
         _pos = 0;
+        match _finish_action:
+            "FIGHT":
+                var fight_scene_resource = ResourceLoader.load(Statics.fight_scene_path);
+                var fight_scene = fight_scene_resource.instance();
+                var level_scene = get_tree().current_scene;
+                fight_scene.set_return_scene(level_scene);
+                get_node("/root").add_child(fight_scene);
+                get_tree().current_scene = fight_scene;
+                get_node("/root").remove_child(level_scene);
+            "NONE":
+                pass;
         return;
     for i in range(_pos, _dict.size()):
         var item = _dict[str(i)];
+        if item.has("new_finish_action"):
+            _finish_action = item.new_finish_action;
         match item.condition:
             "NOT_READ":
                 # todo

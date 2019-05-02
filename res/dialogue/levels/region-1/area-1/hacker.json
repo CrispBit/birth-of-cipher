@@ -8,6 +8,12 @@
     "1": {
         "condition": "NONE",
         "content": "How bout that, punk?! This message *will* show again, punk! It's a sure deal, punk!",
-        "pass_divert": "-1"
+        "pass_divert": "2"
+    },
+    "2": {
+        "condition": "NONE",
+        "content": "Anyway, let's quit the small talk and get schwifty...",
+        "pass_divert": "-1",
+        "new_finish_action": "FIGHT"
     }
 }

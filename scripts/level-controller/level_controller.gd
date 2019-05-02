@@ -11,6 +11,7 @@ var _last_dialogue_entity;
 var _last_interactable_entity;
 var _last_interactable_entity_interact_type;
 var _interactables;
+var _level_instance;
 
 func set_data(data):
     _data = data;
@@ -18,15 +19,15 @@ func set_data(data):
     _load_level(data.region_id, data.area_id);
 
 func _load_level(region_id, area_id):
-    var name_entry_scene_instance = ResourceLoader.load(
+    _level_instance = ResourceLoader.load(
             "res://levels/region-" +
             str(region_id+1) +
             "/area_" +
             str(area_id+1) +
             ".tscn"
     ).instance();
-    get_node("level_container").add_child(name_entry_scene_instance);
-    _player_entity = name_entry_scene_instance.get_node("Player");
+    get_node("level_container").add_child(_level_instance);
+    _player_entity = _level_instance.get_node("Player");
     _interactables = get_tree().get_nodes_in_group("interactable");
 
 func _input(event):
@@ -65,3 +66,10 @@ func _process(delta):
             for action in InputMap.get_action_list("game_interact"):
                 if controller == CONTROLLER.MOUSE_KEYBOARD && action is InputEventKey:
                     get_node("controller_hint_icons/keyboard/" + OS.get_scancode_string(action.scancode)).visible = true;
+
+func handle_fight_win():
+    _level_instance.remove_child(_last_interactable_entity);
+    _last_interactable_entity = null;
+
+func handle_fight_run():
+    pass
