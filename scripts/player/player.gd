@@ -49,7 +49,8 @@ func _physics_process(delta):
         movement_vector.x = speed;
     if Input.is_key_pressed(KEY_DOWN):
         movement_vector.z = speed;
-
+    if Input.is_key_pressed(KEY_Z):
+        movement_vector.y = 20;
     $KinematicBody.move_and_slide(movement_vector);
     $KinematicBody.move_and_slide(Vector3(0, y_vel * (1+delta), 0));
     

@@ -1,20 +1,56 @@
 {
     "0": {
-        "condition": "NOT_READ_IN_DIALOGUE_SESSION",
+        "condition": "NONE",
         "content": "Huh..? Where am I? Aren't I supposed to start in the safehouse basement?",
         "pass_divert": "1",
-        "fail_divert": "1",
         "player_character_speaking": "true"
     },
     "1": {
         "condition": "NONE",
-        "content": "How bout that, punk?! This message *will* show again, punk! It's a sure deal, punk!",
-        "pass_divert": "2"
+        "content": "Yeah... the developers haven't made that area yet. You're starting here, #3.",
+        "pass_divert": "2",
+        "player_character_speaking": "false"
     },
     "2": {
         "condition": "NONE",
-        "content": "Anyway, let's quit the small talk and get schwifty...",
+        "content": "Huh, alright.",
+        "pass_divert": "3",
+        "player_character_speaking": "true"
+    },
+    "3": {
+        "condition": "NONE",
+        "content": "I believe you should start looking around. You're at a campsite, from what I can tell.",
+        "pass_divert": "4",
+        "player_character_speaking": "false"
+    },
+    "4": {
+        "condition": "NONE",
+        "content": "Maybe up the stairs the devs put a friendly person who can tell you about your surroundings.",
+        "pass_divert": "5",
+        "player_character_speaking": "false"
+    },
+    "5": {
+        "condition": "NONE",
+        "content": "Cool! I'll move there with WASD on the keyboard or analogue ? ? ? ? on the game controller... do I really have to give the tutorial dialogue?",
+        "pass_divert": "6",
+        "player_character_speaking": "true"
+    },
+    "6": {
+        "condition": "NONE",
+        "content": "It's a demo. Yes.",
+        "pass_divert": "7",
+        "player_character_speaking": "false"
+    },
+    "7": {
+        "condition": "NONE",
+        "content": "Ugh... when I meet this person, I can press E on the keyboard or Button 1 on the game controller to interact with them.",
+        "pass_divert": "8",
+        "player_character_speaking": "true"
+    },
+    "8": {
+        "condition": "NONE",
+        "content": "That's the spirit!",
         "pass_divert": "-1",
-        "new_finish_action": "FIGHT"
+        "player_character_speaking": "false"
     }
 }
