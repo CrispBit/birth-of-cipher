@@ -1,0 +1,20 @@
+{
+    "0": {
+        "condition": "NOT_READ_IN_DIALOGUE_SESSION",
+        "content": "Huh..? Where am I? Aren't I supposed to start in the safehouse basement?",
+        "pass_divert": "1",
+        "fail_divert": "1",
+        "player_character_speaking": "true"
+    },
+    "1": {
+        "condition": "NONE",
+        "content": "How bout that, punk?! This message *will* show again, punk! It's a sure deal, punk!",
+        "pass_divert": "2"
+    },
+    "2": {
+        "condition": "NONE",
+        "content": "Anyway, let's quit the small talk and get schwifty...",
+        "pass_divert": "-1",
+        "new_finish_action": "FIGHT"
+    }
+}
