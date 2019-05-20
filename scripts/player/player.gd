@@ -2,7 +2,7 @@ extends Node
 
 var y_vel = 0;
 var speed = 10
-var gravity = .2;
+var gravity = .6;
 var rotate_speed = deg2rad(200);
 var movement_vector = Vector3(0, 0, 0);
 
@@ -56,13 +56,16 @@ func _physics_process(delta):
         $KinematicBody/"Scene Root"/AnimationPlayer.play("Walking");
     elif not moving and $KinematicBody/"Scene Root"/AnimationPlayer.get_current_animation() != "Idle":
         $KinematicBody/"Scene Root"/AnimationPlayer.play("Idle");
-    $KinematicBody.move_and_slide(movement_vector);
-    $KinematicBody.move_and_slide(Vector3(0, y_vel * (1+delta), 0));
+    movement_vector.y += y_vel;
+    $KinematicBody.move_and_slide(movement_vector, Vector3(0, 1, 0));
     
     if not $KinematicBody.is_on_floor():
-        y_vel -= gravity * (1+delta);
+        y_vel -= gravity;
     else:
         y_vel = 0;
+    
+    if $KinematicBody.is_on_floor() and $KinematicBody.is_on_wall():
+        y_vel = 10;
     
     if y_vel < -5:
         y_vel = -5;

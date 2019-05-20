@@ -68,7 +68,8 @@ func _process(delta):
                     get_node("controller_hint_icons/keyboard/" + OS.get_scancode_string(action.scancode)).visible = true;
 
 func handle_fight_win():
-    _level_instance.remove_child(_last_interactable_entity);
+    _interactables.erase(_last_interactable_entity);
+    _last_interactable_entity.queue_free();
     _last_interactable_entity = null;
 
 func handle_fight_run():
