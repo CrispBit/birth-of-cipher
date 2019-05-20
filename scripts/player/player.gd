@@ -10,8 +10,6 @@ static func angle_to_angle(from, to):
     return fposmod(to-from + PI, PI*2) - PI
 
 func _process(delta):
-    if not $KinematicBody/"Scene Root"/AnimationPlayer.is_playing():
-        $KinematicBody/"Scene Root"/AnimationPlayer.play("default");
     var angle = 0;
     var B = Vector2(movement_vector.x, -movement_vector.z);
     if B.x != 0 || B.y != 0:
@@ -40,17 +38,24 @@ func _process(delta):
 
 func _physics_process(delta):
     movement_vector = Vector3(0, 0, 0);
-    
-    if Input.is_key_pressed(KEY_LEFT):
+
+    var moving = false;
+    if Input.is_action_pressed("move_left"):
         movement_vector.x = -speed;
-    if Input.is_key_pressed(KEY_UP):
+        moving = true;
+    if Input.is_action_pressed("move_up"):
         movement_vector.z = -speed;
-    if Input.is_key_pressed(KEY_RIGHT):
+        moving = true;
+    if Input.is_action_pressed("move_right"):
         movement_vector.x = speed;
-    if Input.is_key_pressed(KEY_DOWN):
+        moving = true;
+    if Input.is_action_pressed("move_down"):
         movement_vector.z = speed;
-    if Input.is_key_pressed(KEY_Z):
-        movement_vector.y = 20;
+        moving = true;
+    if moving and $KinematicBody/"Scene Root"/AnimationPlayer.get_current_animation() != "Walking":
+        $KinematicBody/"Scene Root"/AnimationPlayer.play("Walking");
+    elif not moving and $KinematicBody/"Scene Root"/AnimationPlayer.get_current_animation() != "Idle":
+        $KinematicBody/"Scene Root"/AnimationPlayer.play("Idle");
     $KinematicBody.move_and_slide(movement_vector);
     $KinematicBody.move_and_slide(Vector3(0, y_vel * (1+delta), 0));
     
