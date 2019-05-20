@@ -12,7 +12,7 @@ dest_files=[ "res://.import/daredevil.dae-ad8d80d17ec4541157a9915c253615bf.scn" 
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_name="Daredevil Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
@@ -26,9 +26,9 @@ meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
 animation/import=true
-animation/fps=15
+animation/fps=60.0
 animation/filter_script=""
-animation/storage=false
+animation/storage=1
 animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05
